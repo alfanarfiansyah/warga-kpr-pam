@@ -1,0 +1,1258 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:#f4f6f8;
+color:#333;
+line-height:1.7;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+background:#fff;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+z-index:1000;
+}
+
+header .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#2c6e49;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:600;
+}
+
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600')
+center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+}
+
+.hero-content{
+position:relative;
+color:#fff;
+text-align:center;
+max-width:800px;
+padding:20px;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 35px;
+background:#2c6e49;
+color:#fff;
+text-decoration:none;
+border-radius:40px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#1f4f34;
+}
+
+section{
+padding:90px 0;
+}
+
+section h2{
+text-align:center;
+margin-bottom:40px;
+font-size:36px;
+color:#2c6e49;
+}
+
+.tentang p{
+max-width:800px;
+margin:auto;
+text-align:center;
+}
+
+.pengurus-grid,
+.info-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card,
+.info-box{
+background:#fff;
+padding:30px;
+text-align:center;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card i{
+font-size:45px;
+color:#2c6e49;
+margin-bottom:15px;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.gallery-grid img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+}
+
+.kontak{
+background:#2c6e49;
+color:white;
+text-align:center;
+}
+
+.kontak h2{
+color:white;
+}
+
+.kontak .btn{
+background:white;
+color:#2c6e49;
+margin-top:20px;
+}
+
+footer{
+background:#1f4f34;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+/* =========================
+   POS KAMLING
+========================= */
+
+.poskamling{
+    padding:90px 0;
+    background:#f8fafc;
+}
+
+.section-desc{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 50px;
+    color:#666;
+}
+
+.pos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.pos-card{
+    background:#fff;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.pos-card:hover{
+    transform:translateY(-8px);
+}
+
+.pos-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:#2c6e49;
+}
+
+.hari{
+    display:inline-block;
+    background:#2c6e49;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.pos-card ul{
+    list-style:none;
+    padding:0;
+}
+
+.pos-card ul li{
+    padding:10px 0;
+    border-bottom:1px solid #eee;
+}
+
+.pos-card ul li:last-child{
+    border-bottom:none;
+}
+
+/* ====================
+   HERO SLIDER
+==================== */
+
+.hero-slider{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:opacity 1s ease;
+}
+
+.slide.active{
+    opacity:1;
+    z-index:1;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.slide::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+}
+
+.slide-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:#fff;
+    width:90%;
+    max-width:800px;
+}
+
+.slide-content h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.slide-content p{
+    font-size:22px;
+}
+
+@media(max-width:768px){
+
+.slide-content h1{
+    font-size:38px;
+}
+
+.slide-content p{
+    font-size:18px;
+}
+
+}
+
+/* ==========================
+   GALLERY
+========================== */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.05);
+}
+
+/* ==========================
+   LIGHTBOX
+========================== */
+
+.lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    padding:20px;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox-img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:15px;
+}
+
+.close-btn{
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:45px;
+    cursor:pointer;
+}
+
+/* ==========================
+   STATISTIK WARGA
+========================== */
+
+.statistik{
+    padding:80px 0;
+    background:#f8fafc;
+}
+
+.stat-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.stat-card{
+    background:#fff;
+    padding:35px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+}
+
+.stat-card i{
+    font-size:45px;
+    color:#2c6e49;
+    margin-bottom:15px;
+}
+
+.stat-card h3{
+    font-size:42px;
+    color:#2c6e49;
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    color:#666;
+    font-size:16px;
+}
+
+/* ==========================
+   PREMIUM FOOTER
+========================== */
+
+.footer{
+    background:#173b2d;
+    color:#fff;
+    padding-top:70px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+.footer-col h4{
+    margin-bottom:20px;
+    font-size:20px;
+}
+
+.footer-col p{
+    color:#d7d7d7;
+    margin-bottom:12px;
+}
+
+.footer-col ul{
+    list-style:none;
+}
+
+.footer-col ul li{
+    margin-bottom:12px;
+}
+
+.footer-col ul li a{
+    color:#d7d7d7;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-col ul li a:hover{
+    color:#fff;
+    padding-left:5px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.footer-logo img{
+    width:65px;
+    height:65px;
+    object-fit:contain;
+    border-radius:50%;
+    background:#fff;
+    padding:5px;
+}
+
+.footer-logo h3{
+    color:white;
+}
+
+.social-icons{
+    display:flex;
+    gap:12px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    background:rgba(255,255,255,.1);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    transform:translateY(-5px);
+    background:#2c6e49;
+}
+
+.footer-bottom{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.15);
+    margin-top:50px;
+    padding:25px 0;
+    color:#ccc;
+}
+
+/* ======================
+   KONTAK PREMIUM
+====================== */
+
+.kontak{
+    padding:100px 0;
+    background:
+    linear-gradient(
+    135deg,
+    #2c6e49,
+    #3d8a5d);
+    color:white;
+}
+
+.kontak-header{
+    text-align:center;
+    max-width:700px;
+    margin:auto;
+    margin-bottom:60px;
+}
+
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,.15);
+    padding:8px 20px;
+    border-radius:30px;
+    margin-bottom:15px;
+}
+
+.kontak-header h2{
+    font-size:42px;
+    margin-bottom:15px;
+    color:white;
+}
+
+.kontak-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.kontak-card{
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.kontak-card:hover{
+    transform:translateY(-10px);
+}
+
+.kontak-card .icon{
+    width:80px;
+    height:80px;
+    margin:auto;
+    margin-bottom:20px;
+    border-radius:50%;
+    background:white;
+    color:#2c6e49;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+}
+
+.kontak-card h3{
+    margin-bottom:10px;
+}
+
+.kontak-card p{
+    margin-bottom:20px;
+}
+
+.kontak-card a{
+    display:inline-block;
+    background:white;
+    color:#2c6e49;
+    padding:12px 25px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.jam-layanan{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.jam-box{
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    border-radius:15px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.jam-box i{
+    font-size:32px;
+}
+
+/* =========================
+   INFORMASI WARGA PREMIUM
+========================= */
+
+.informasi{
+    padding:100px 0;
+    background:#f8fafc;
+}
+
+.section-header{
+    text-align:center;
+    max-width:750px;
+    margin:auto;
+    margin-bottom:60px;
+}
+
+.badge-info{
+    display:inline-block;
+    padding:8px 20px;
+    background:#e8f5ee;
+    color:#2c6e49;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.section-header h2{
+    font-size:42px;
+    color:#2c6e49;
+    margin-bottom:15px;
+}
+
+.section-header p{
+    color:#666;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.info-card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.info-card:hover{
+    transform:translateY(-10px);
+}
+
+.info-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:#2c6e49;
+}
+
+.info-icon{
+    width:70px;
+    height:70px;
+    background:#e8f5ee;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.info-icon i{
+    font-size:28px;
+    color:#2c6e49;
+}
+
+.info-date{
+    display:inline-block;
+    background:#2c6e49;
+    color:white;
+    padding:6px 15px;
+    border-radius:20px;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.info-card h3{
+    margin-bottom:15px;
+    color:#333;
+}
+
+.info-card p{
+    color:#666;
+    line-height:1.7;
+}
+
+/* ==========================
+   PENGURUS PREMIUM
+========================== */
+
+.pengurus{
+    padding:100px 0;
+    background:#fff;
+}
+
+.badge-pengurus{
+    display:inline-block;
+    padding:8px 20px;
+    background:#e8f5ee;
+    color:#2c6e49;
+    border-radius:30px;
+    margin-bottom:15px;
+    font-weight:600;
+}
+
+.section-header{
+    text-align:center;
+    max-width:750px;
+    margin:auto;
+    margin-bottom:60px;
+}
+
+.section-header h2{
+    font-size:42px;
+    color:#2c6e49;
+    margin-bottom:15px;
+}
+
+.section-header p{
+    color:#666;
+}
+
+.pengurus-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.pengurus-card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.pengurus-card:hover{
+    transform:translateY(-10px);
+}
+
+.foto-wrapper{
+    height:350px;
+    background:linear-gradient(
+    135deg,
+    #2c6e49,
+    #58a06c);
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+
+    overflow:hidden;
+}
+
+.foto-wrapper img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+}
+
+.pengurus-info{
+    padding:25px;
+    text-align:center;
+}
+
+.pengurus-info h3{
+    margin-bottom:8px;
+    color:#333;
+}
+
+.pengurus-info span{
+    display:inline-block;
+    background:#2c6e49;
+    color:white;
+    padding:8px 18px;
+    border-radius:25px;
+    font-size:14px;
+}
+
+/* ==========================
+   TENTANG KAMI
+========================== */
+
+.tentang{
+    padding:100px 0;
+    background:#fff;
+}
+
+.tentang-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.tentang-image{
+    position:relative;
+}
+
+.tentang-image img{
+    width:100%;
+    border-radius:25px;
+    display:block;
+    box-shadow:0 15px 30px rgba(0,0,0,.1);
+}
+
+.experience-box{
+    position:absolute;
+    bottom:-20px;
+    right:-20px;
+    background:#2c6e49;
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.experience-box h3{
+    font-size:32px;
+    margin-bottom:5px;
+}
+
+.tentang-badge{
+    display:inline-block;
+    background:#e8f5ee;
+    color:#2c6e49;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.tentang-content h2{
+    font-size:42px;
+    color:#2c6e49;
+    margin-bottom:20px;
+    line-height:1.3;
+}
+
+.tentang-content p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.visi-misi{
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.visi-card{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    background:#f8fafc;
+    padding:20px;
+    border-radius:15px;
+}
+
+.visi-card i{
+    width:60px;
+    height:60px;
+    background:#2c6e49;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+
+.visi-card h4{
+    margin-bottom:8px;
+    color:#333;
+}
+
+.visi-card p{
+    margin:0;
+}
+
+@media(max-width:991px){
+
+    .tentang-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tentang-content{
+        text-align:center;
+    }
+
+    .visi-card{
+        text-align:left;
+    }
+
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width:991px){
+
+    .container{
+        width:92%;
+    }
+
+    .tentang-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .tentang-content{
+        text-align:center;
+    }
+
+    .experience-box{
+        right:10px;
+        bottom:10px;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width:768px){
+
+    section{
+        padding:70px 0;
+    }
+
+    .container{
+        width:94%;
+    }
+
+    /* HEADER */
+
+    header .container{
+        padding:15px 0;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    /* HERO */
+
+    .hero-slider{
+        height:80vh;
+    }
+
+    .slide-content{
+        width:95%;
+    }
+
+    .slide-content h1{
+        font-size:32px !important;
+        line-height:1.3;
+    }
+
+    .slide-content p{
+        font-size:16px !important;
+    }
+
+    .btn{
+        padding:12px 25px;
+        font-size:14px;
+    }
+
+    /* SECTION TITLE */
+
+    section h2,
+    .section-header h2,
+    .tentang-content h2,
+    .kontak-header h2{
+        font-size:28px !important;
+    }
+
+    /* STATISTIK */
+
+    .stat-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stat-card{
+        padding:25px;
+    }
+
+    .stat-card h3{
+        font-size:34px;
+    }
+
+    /* INFORMASI */
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info-card{
+        padding:25px;
+    }
+
+    /* POS KAMLING */
+
+    .pos-grid{
+        grid-template-columns:1fr;
+    }
+
+    /* PENGURUS */
+
+    .pengurus-grid{
+        grid-template-columns:1fr;
+    }
+
+    .foto-wrapper{
+        height:320px;
+    }
+
+    .pengurus-info h3{
+        font-size:18px;
+    }
+
+    /* GALERI */
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid img{
+        height:220px;
+    }
+
+    /* KONTAK */
+
+    .kontak-grid{
+        grid-template-columns:1fr;
+    }
+
+    .jam-layanan{
+        grid-template-columns:1fr;
+    }
+
+    .jam-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    /* FOOTER */
+
+    .footer{
+        text-align:center;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .footer-logo{
+        justify-content:center;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width:480px){
+
+    .logo{
+        font-size:18px;
+    }
+
+    .slide-content h1{
+        font-size:26px !important;
+    }
+
+    .slide-content p{
+        font-size:14px !important;
+    }
+
+    .section-header h2,
+    .tentang-content h2,
+    .kontak-header h2{
+        font-size:24px !important;
+    }
+
+    .stat-card,
+    .info-card,
+    .kontak-card,
+    .pos-card{
+        padding:20px;
+    }
+
+    .foto-wrapper{
+        height:280px;
+    }
+
+    .experience-box{
+        padding:15px;
+    }
+
+    .experience-box h3{
+        font-size:24px;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+}
+
+/* ==========================
+   MOBILE MENU
+========================== */
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:#2c6e49;
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-menu{
+        position:fixed;
+        top:80px;
+        left:-100%;
+
+        width:100%;
+        height:auto;
+
+        background:white;
+
+        display:flex;
+        flex-direction:column;
+
+        gap:0;
+
+        padding:20px 0;
+
+        box-shadow:
+        0 10px 20px rgba(0,0,0,.1);
+
+        transition:.3s;
+    }
+
+    .nav-menu.active{
+        left:0;
+    }
+
+    .nav-menu li{
+        width:100%;
+        text-align:center;
+        padding:15px 0;
+    }
+
+    .nav-menu li a{
+        display:block;
+        font-size:16px;
+    }
+
+}
+
+header.scrolled{
+    background:white;
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.08);
+}
